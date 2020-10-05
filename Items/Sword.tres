@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sword.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Sword"
+texture = ExtResource( 2 )
+description = "A basic metal sword that can be used by any class."
+itemType = "Equipament"
+equipmentType = 5
+damage = 5
+damageType = 0
+secondDamageType = 3
+armor = 0
+healPoints = 0
+cure = ""
