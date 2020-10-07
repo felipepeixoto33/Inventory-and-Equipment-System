@@ -9,11 +9,11 @@ onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
 var mouseAtSlot = false
 
 func display_item(item):
-	if item is Item && item.itemType == "Equipament":
+	if item is Item && item.itemTypes == "Equipament":
 		itemTextureRect.texture = item.texture
 		itemAmountLabel.text = str(item.amount)
 	else:
-		itemTextureRect.texture = load("res://Assets/ShieldSlot.png")
+		itemTextureRect.texture = load("res://Assets/LegSlot.png")
 		itemAmountLabel.text = ""
 
 

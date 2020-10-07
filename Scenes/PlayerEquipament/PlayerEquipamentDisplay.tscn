@@ -1,13 +1,15 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/PlayerEquipament/LegsSlotDisplay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/LegsSlotDisplay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerEquipament/PlayerEquipamentDisplay.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/PlayerEquipament/HelmetSlotDisplay.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/PlayerEquipament/ArmorSlotDisplay.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/PlayerEquipament/ShieldSlotDisplay.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/PlayerEquipament/BootsSlotDisplay.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/PlayerEquipament/SwordSlotDisplay.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/PlayerEquipament/GaundletsSlotDisplay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/HelmetSlotDisplay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/ArmorSlotDisplay.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/ShieldSlotDisplay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/BootsSlotDisplay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/SwordSlotDisplay.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerEquipament/Slots/GaundletsSlotDisplay.tscn" type="PackedScene" id=8]
+
+
 
 [node name="PlayerEquipamentDisplay" type="GridContainer"]
 anchor_right = 1.0

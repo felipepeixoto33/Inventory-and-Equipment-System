@@ -11,7 +11,7 @@ export(Array, Resource) var items = [
 ]
 
 func set_item(item_index, item):
-	if item.itemType == "Equipament":
+	if item.itemTypes == "Equipament":
 		var previousItem = items[item_index]
 		items[item_index] = item
 		emit_signal("items_changed", [item_index])
@@ -43,5 +43,5 @@ func make_items_unique():
 
 func only_equipments(item):
 	for i in items.size():
-		if item is Item and item.itemType != "Equipament":
+		if item is Item and item.itemTypes != "Equipament":
 			remove_item(i)

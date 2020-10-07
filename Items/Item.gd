@@ -6,9 +6,14 @@ class_name Item
 export(String) var name = null
 export(Texture) var texture
 export(String) var description = null
-export(String, "Other", "Equipament") var itemType
-export(int, "None", "Helmet", "Armor", "Gauntlets", "Legs", "Boots", "Sword", "Shield") var equipmentType
+export(String, "Other", "Equipament") var itemTypes
+export(int, "None", "Helmet", "Armor", "Gauntlets", "Legs", "Boots", "Sword", "Shield") var equipmentTypes
 var amount = 1
+
+enum ItemTypes {EQUIPMENT, BOOK, POTION, CASH, OTHER}
+export(ItemTypes) var itemType
+enum EquipmentTypes {HELMET, ARMOR, GAUNTLETS, LEGS, BOOTS, SWORD, SHIELD, RING, OTHER}
+export(EquipmentTypes) var equipmentType
 
 
 #Damage & Armor
@@ -16,8 +21,10 @@ var amount = 1
 #Damage
 export(int) var damage
 
-export(int, "Piercing", "Blunt", "Slash", "None") var damageType = null 
-export(int, "Piercing", "Blunt", "Slash", "None") var secondDamageType = null 
+enum DamageTypes {NONE, PIERCING, BLUNT, SLASH}
+export(DamageTypes) var damageType
+enum SecondDamageTypes {NONE, PIERCING, BLUNT, SLASH}
+export(SecondDamageTypes) var secondDamageType
 #Physical Damage Types:
 #1 -> Piercing
 #2 -> Blunt
@@ -28,4 +35,4 @@ export(int) var armor
 
 #Heal & Cure
 export(int) var healPoints
-export(String) var cure
+enum CureTypes {POISON, FLAMES, CORRUPTION}

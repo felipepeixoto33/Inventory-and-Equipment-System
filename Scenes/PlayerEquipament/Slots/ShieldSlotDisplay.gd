@@ -2,22 +2,18 @@ extends CenterContainer
 
 var inventory = preload("res://PlayerEquipament.tres")
 
-var mouseAtSlot = false
-
-
 onready var t = Timer.new()
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
-onready var descriptionLabel = $ItemTextureRect/CanvasLayer/ColorRect/DescriptionLabel
-onready var labelBackground = $ItemTextureRect/CanvasLayer/ColorRect
 
+var mouseAtSlot = false
 
 func display_item(item):
-	if item is Item && item.itemType == "Equipament":
+	if item is Item && item.itemTypes == "Equipament":
 		itemTextureRect.texture = item.texture
 		itemAmountLabel.text = str(item.amount)
 	else:
-		itemTextureRect.texture = load("res://Assets/HelmetSlot.png")
+		itemTextureRect.texture = load("res://Assets/ShieldSlot.png")
 		itemAmountLabel.text = ""
 
 
@@ -58,23 +54,18 @@ func _on_ItemTextureRect_mouse_entered():
 		var item_index = get_index()
 		var item = inventory.items[item_index]
 		
-		
-		t.set_wait_time(0.5)
+		t.set_wait_time(3)
 		self.add_child(t)
 		t.start()
 		yield(t, "timeout")
 		
 		if item is Item:
-			labelBackground.visible = true
-			if item.description != "" && item.description != null:
-				descriptionLabel.text = item.description
-				yield(descriptionLabel, "item_rect_changed")
-				labelBackground.rect_size = descriptionLabel.rect_size
+			print(item.description)
+		else:
+			print("There's not a item in the slot")
 
 
 func _on_ItemTextureRect_mouse_exited():
 	mouseAtSlot = false
 	t.stop()
 	t.set_wait_time(0)
-	descriptionLabel.text = ""
-	labelBackground.visible = false
