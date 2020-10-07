@@ -7,7 +7,7 @@ export(String) var name = null
 export(Texture) var texture
 export(String) var description = null
 export(String, "Other", "Equipament") var itemType
-export(int, "None", "Helmet", "Armor", "Legs", "Boots", "Sword", "Shield") var equipmentType
+export(int, "None", "Helmet", "Armor", "Gauntlets", "Legs", "Boots", "Sword", "Shield") var equipmentType
 var amount = 1
 
 

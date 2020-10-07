@@ -36,3 +36,31 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ItemTextureRect"]
+
+[node name="ColorRect" type="ColorRect" parent="ItemTextureRect/CanvasLayer"]
+visible = false
+margin_left = 127.164
+margin_top = 83.2044
+margin_right = 154.164
+margin_bottom = 97.2044
+mouse_filter = 2
+size_flags_vertical = 4
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="DescriptionLabel" type="Label" parent="ItemTextureRect/CanvasLayer/ColorRect"]
+margin_right = 27.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 3 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="ItemTextureRect" to="." method="_on_ItemTextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="ItemTextureRect" to="." method="_on_ItemTextureRect_mouse_exited"]

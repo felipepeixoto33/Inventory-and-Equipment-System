@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://Scenes/PlayerEquipament/PlayerEquipamentContainer.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PlayerEquipament/PlayerEquipamentDisplay.tscn" type="PackedScene" id=2]
 
 [node name="PlayerEquipamentContainer" type="ColorRect"]
@@ -12,6 +13,7 @@ margin_top = -90.0
 margin_right = 45.0
 margin_bottom = 90.0
 color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -28,6 +30,6 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 14.0
-margin_top = 70.0
+margin_top = 59.0
 margin_right = 76.0
-margin_bottom = 110.0
+margin_bottom = 121.0

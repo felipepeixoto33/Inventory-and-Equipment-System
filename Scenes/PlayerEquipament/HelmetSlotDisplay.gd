@@ -2,8 +2,15 @@ extends CenterContainer
 
 var inventory = preload("res://PlayerEquipament.tres")
 
+var mouseAtSlot = false
+
+
+onready var t = Timer.new()
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
+onready var descriptionLabel = $ItemTextureRect/CanvasLayer/ColorRect/DescriptionLabel
+onready var labelBackground = $ItemTextureRect/CanvasLayer/ColorRect
+
 
 func display_item(item):
 	if item is Item && item.itemType == "Equipament":
@@ -43,3 +50,30 @@ func drop_data(_position,data):
 		inventory.set_item(my_item_index, data.item)
 	
 	inventory.drag_data = null
+
+
+func _on_ItemTextureRect_mouse_entered():
+	mouseAtSlot = true
+	if mouseAtSlot:
+		var item_index = get_index()
+		var item = inventory.items[item_index]
+		
+		
+		t.set_wait_time(3)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+		
+		if item is Item:
+			labelBackground.visible = true
+			descriptionLabel.text = item.description
+			yield(descriptionLabel, "item_rect_changed")
+			labelBackground.rect_size = descriptionLabel.rect_size
+
+
+func _on_ItemTextureRect_mouse_exited():
+	mouseAtSlot = false
+	t.stop()
+	t.set_wait_time(0)
+	descriptionLabel.text = ""
+	labelBackground.visible = false

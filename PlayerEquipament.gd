@@ -7,7 +7,7 @@ var drag_data = null
 signal items_changed(indexes)
 
 export(Array, Resource) var items = [
-	null, null, null, null, null, null
+	null, null, null, null, null, null, null
 ]
 
 func set_item(item_index, item):
@@ -38,3 +38,8 @@ func make_items_unique():
 		else:
 			unique_items.append(null)
 	items = unique_items
+
+func only_equipments(item):
+	for i in items.size():
+		if item.itemType != "Equipament":
+			remove_item(i)

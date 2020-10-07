@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/PlayerEquipament/LegsSlotDisplay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerEquipament/PlayerEquipamentDisplay.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/PlayerEquipament/ShieldSlotDisplay.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/PlayerEquipament/BootsSlotDisplay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/PlayerEquipament/SwordSlotDisplay.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerEquipament/GaundletsSlotDisplay.tscn" type="PackedScene" id=8]
 
 [node name="PlayerEquipamentDisplay" type="GridContainer"]
 anchor_right = 1.0
@@ -23,42 +24,53 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 104.0
-margin_bottom = 88.0
+margin_bottom = 57.0
 
 [node name="ArmorSlotDisplay" parent="." instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 108.0
 margin_right = 212.0
-margin_bottom = 88.0
+margin_bottom = 57.0
+
+[node name="GauntletsSlotDisplay" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 216.0
+margin_top = 0.0
+margin_right = 320.0
+margin_bottom = 57.0
 
 [node name="LegsSlotDisplay" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 216.0
-margin_right = 320.0
-margin_bottom = 88.0
+margin_left = 0.0
+margin_top = 61.0
+margin_right = 104.0
+margin_bottom = 118.0
 
 [node name="BootsSlotDisplay" parent="." instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 92.0
-margin_right = 104.0
-margin_bottom = 180.0
+margin_left = 108.0
+margin_top = 61.0
+margin_right = 212.0
+margin_bottom = 118.0
 
 [node name="SwordSlotDisplay" parent="." instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 108.0
-margin_top = 92.0
-margin_right = 212.0
-margin_bottom = 180.0
+margin_left = 216.0
+margin_top = 61.0
+margin_right = 320.0
+margin_bottom = 118.0
 
 [node name="ShieldSlotDisplay" parent="." instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 216.0
-margin_top = 92.0
-margin_right = 320.0
-margin_bottom = 180.0
+margin_left = 0.0
+margin_top = 122.0
+margin_right = 104.0
+margin_bottom = 179.0

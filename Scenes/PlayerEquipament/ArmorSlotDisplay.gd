@@ -10,7 +10,7 @@ func display_item(item):
 		itemTextureRect.texture = item.texture
 		itemAmountLabel.text = str(item.amount)
 	else:
-		itemTextureRect.texture = load("res://Assets/EmptyInventorySlot.png")
+		itemTextureRect.texture = load("res://Assets/ArmorSlot.png")
 		itemAmountLabel.text = ""
 
 

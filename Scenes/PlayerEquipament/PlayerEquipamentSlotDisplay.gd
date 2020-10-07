@@ -17,7 +17,7 @@ func display_item(item):
 func get_drag_data(_position):
 	var item_index = get_index()
 	var item = inventory.remove_item(item_index)
-	if item is Item:
+	if item is Item && item.itemType == "Equipament":
 		var data = {}
 		data.item = item
 		data.item_index = item_index
@@ -33,7 +33,7 @@ func can_drop_data(_position, data):
 
 func drop_data(_position,data):
 	var my_item_index = get_index()
-	var my_item = inventory.items[my_item_index]
+	var my_item = inventory.items[my_item_index] 
 	
 	if my_item is Item and my_item.name == data.item.name:
 		my_item.amount += data.item.amount

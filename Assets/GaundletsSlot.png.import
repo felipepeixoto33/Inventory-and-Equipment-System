@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ShieldSlot.png-3558375b4826e19a864022040f1c931b.stex"
+path="res://.import/GaundletsSlot.png-0d500b493a87e3f77f210ac095c700dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/ShieldSlot.png"
-dest_files=[ "res://.import/ShieldSlot.png-3558375b4826e19a864022040f1c931b.stex" ]
+source_file="res://Assets/GaundletsSlot.png"
+dest_files=[ "res://.import/GaundletsSlot.png-0d500b493a87e3f77f210ac095c700dd.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

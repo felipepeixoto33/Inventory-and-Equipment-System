@@ -2,8 +2,11 @@ extends CenterContainer
 
 var inventory = preload("res://PlayerEquipament.tres")
 
+onready var t = Timer.new()
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
+
+var mouseAtSlot = false
 
 func display_item(item):
 	if item is Item:
@@ -43,3 +46,26 @@ func drop_data(_position,data):
 		inventory.set_item(my_item_index, data.item)
 	
 	inventory.drag_data = null
+
+
+func _on_ItemTextureRect_mouse_entered():
+	mouseAtSlot = true
+	if mouseAtSlot:
+		var item_index = get_index()
+		var item = inventory.items[item_index]
+		
+		t.set_wait_time(3)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+		
+		if item is Item:
+			print(item.description)
+		else:
+			print("There's not a item in the slot")
+
+
+func _on_ItemTextureRect_mouse_exited():
+	mouseAtSlot = false
+	t.stop()
+	t.set_wait_time(0)
