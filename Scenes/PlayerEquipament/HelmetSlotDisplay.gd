@@ -59,16 +59,17 @@ func _on_ItemTextureRect_mouse_entered():
 		var item = inventory.items[item_index]
 		
 		
-		t.set_wait_time(3)
+		t.set_wait_time(0.5)
 		self.add_child(t)
 		t.start()
 		yield(t, "timeout")
 		
 		if item is Item:
 			labelBackground.visible = true
-			descriptionLabel.text = item.description
-			yield(descriptionLabel, "item_rect_changed")
-			labelBackground.rect_size = descriptionLabel.rect_size
+			if item.description != "" && item.description != null:
+				descriptionLabel.text = item.description
+				yield(descriptionLabel, "item_rect_changed")
+				labelBackground.rect_size = descriptionLabel.rect_size
 
 
 func _on_ItemTextureRect_mouse_exited():

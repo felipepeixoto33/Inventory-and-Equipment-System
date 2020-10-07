@@ -8,11 +8,14 @@ script/source = "extends CenterContainer
 
 var inventory = preload(\"res://Inventory.tres\")
 
+var mouseAtSlot = false
+
+
 onready var t = Timer.new()
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel
-
-var mouseAtSlot = false
+onready var descriptionLabel = $ItemTextureRect/CanvasLayer/ColorRect/DescriptionLabel
+onready var labelBackground = $ItemTextureRect/CanvasLayer/ColorRect
 
 func display_item(item):
 	if item is Item:
@@ -60,21 +63,25 @@ func _on_ItemTextureRect_mouse_entered():
 		var item_index = get_index()
 		var item = inventory.items[item_index]
 		
-		t.set_wait_time(3)
+		t.set_wait_time(0.5)
 		self.add_child(t)
 		t.start()
 		yield(t, \"timeout\")
 		
 		if item is Item:
-			print(item.description)
-		else:
-			print(\"There's not a item in the slot\")
+			labelBackground.visible = true
+			if item.description != \"\" && item.description != null:
+				descriptionLabel.text = item.description
+				yield(descriptionLabel, \"item_rect_changed\")
+				labelBackground.rect_size = descriptionLabel.rect_size
 
 
 func _on_ItemTextureRect_mouse_exited():
 	mouseAtSlot = false
 	t.stop()
 	t.set_wait_time(0)
+	descriptionLabel.text = \"\"
+	labelBackground.visible = false
 "
 
 [node name="InventorySlotDisplay" type="CenterContainer"]
@@ -109,3 +116,29 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ItemTextureRect"]
+
+[node name="ColorRect" type="ColorRect" parent="ItemTextureRect/CanvasLayer"]
+visible = false
+margin_left = 127.0
+margin_top = 83.0
+margin_right = 154.0
+margin_bottom = 97.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionLabel" type="Label" parent="ItemTextureRect/CanvasLayer/ColorRect"]
+margin_right = 27.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 3 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="mouse_entered" from="ItemTextureRect" to="." method="_on_ItemTextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="ItemTextureRect" to="." method="_on_ItemTextureRect_mouse_exited"]

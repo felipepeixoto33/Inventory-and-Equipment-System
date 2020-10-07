@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 name = "Tall Shield"
 texture = ExtResource( 2 )
-description = ""
+description = "A not too heavy shield with decent defense."
 itemType = "Equipament"
 equipmentType = 6
 damage = 0

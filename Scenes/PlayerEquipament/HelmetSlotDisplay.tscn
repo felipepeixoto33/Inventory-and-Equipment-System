@@ -41,10 +41,10 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="ItemTextureRect/CanvasLayer"]
 visible = false
-margin_left = 127.164
-margin_top = 83.2044
-margin_right = 154.164
-margin_bottom = 97.2044
+margin_left = 127.0
+margin_top = 83.0
+margin_right = 154.0
+margin_bottom = 97.0
 mouse_filter = 2
 size_flags_vertical = 4
 color = Color( 0, 0, 0, 1 )
