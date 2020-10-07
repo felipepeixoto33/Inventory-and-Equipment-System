@@ -1,7 +1,6 @@
 extends GridContainer
 
 var inventory = preload("res://PlayerEquipament.tres")
-
 func _ready():
 	inventory.connect("items_changed", self, "_on_items_changed")
 	inventory.make_items_unique()

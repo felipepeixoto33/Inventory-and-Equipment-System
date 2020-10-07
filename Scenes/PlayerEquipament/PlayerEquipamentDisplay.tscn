@@ -20,20 +20,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HelmetSlotDisplay" parent="." instance=ExtResource( 3 )]
+[node name="HelmetSlotDisplay" parent="." groups=[
+"EquipmentSlot",
+"HelmetSlot",
+] instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 104.0
 margin_bottom = 57.0
 
-[node name="ArmorSlotDisplay" parent="." instance=ExtResource( 4 )]
+[node name="ArmorSlotDisplay" parent="." groups=[
+"ArmorSlot",
+"EquipmentSlot",
+] instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 108.0
 margin_right = 212.0
 margin_bottom = 57.0
 
-[node name="GauntletsSlotDisplay" parent="." instance=ExtResource( 8 )]
+[node name="GauntletsSlotDisplay" parent="." groups=[
+"EquipmentSlot",
+"GauntletsSlot",
+] instance=ExtResource( 8 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -43,7 +52,10 @@ margin_top = 0.0
 margin_right = 320.0
 margin_bottom = 57.0
 
-[node name="LegsSlotDisplay" parent="." instance=ExtResource( 1 )]
+[node name="LegsSlotDisplay" parent="." groups=[
+"EquipmentSlot",
+"LegsSlot",
+] instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -51,7 +63,10 @@ margin_top = 61.0
 margin_right = 104.0
 margin_bottom = 118.0
 
-[node name="BootsSlotDisplay" parent="." instance=ExtResource( 6 )]
+[node name="BootsSlotDisplay" parent="." groups=[
+"BootsSlot",
+"EquipmentSlot",
+] instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 108.0
@@ -59,7 +74,10 @@ margin_top = 61.0
 margin_right = 212.0
 margin_bottom = 118.0
 
-[node name="SwordSlotDisplay" parent="." instance=ExtResource( 7 )]
+[node name="SwordSlotDisplay" parent="." groups=[
+"EquipmentSlot",
+"SwordSlot",
+] instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 216.0
@@ -67,7 +85,10 @@ margin_top = 61.0
 margin_right = 320.0
 margin_bottom = 118.0
 
-[node name="ShieldSlotDisplay" parent="." instance=ExtResource( 5 )]
+[node name="ShieldSlotDisplay" parent="." groups=[
+"EquipmentSlot",
+"ShieldSlot",
+] instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
